@@ -1,0 +1,124 @@
+/* Thiết lập nền */
+body {
+    position: relative;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Hiệu ứng làm tối nền */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  /* Đảm bảo nội dung hiển thị trên lớp nền tối */
+  body * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Tiêu đề và nhãn */
+  h1, label, p {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Button chung */
+  button {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: white;
+    color: black;
+  }
+  
+  /* Ẩn các phần không cần thiết */
+  .hidden {
+    display: none;
+  }
+  
+  /* Hiển thị kết quả */
+  #result {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    min-width: 250px;
+  }
+  
+  /* Kết quả đúng */
+  #result.correct {
+    background: rgba(0, 255, 0, 0.8);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.7);
+  }
+  
+  /* Kết quả sai */
+  #result.wrong {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
+  }
+  
+  /* Lỗi */
+  .error {
+    background: rgba(0, 0, 255, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
+    margin-top: 10px;
+  }
+  
+  /* Hiệu ứng lắc */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 80% { transform: translateX(-5px); }
+    40%, 60% { transform: translateX(5px); }
+  }
+  
+  /* Tùy chỉnh dropdown (select) */
+  select {
+    width: 300px; /* Kích thước lớn hơn */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0; /* Giữ góc vuông */
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  select:hover {
+    background: white;
+    color: black;
+  }
+  
+  /* Container của select để căn giữa */
+  #lessonSelectContainer {
+    margin-top: 10px;
+  }
+  
