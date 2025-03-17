@@ -8,6 +8,10 @@ const result = document.getElementById("result");
 const explanationImage = document.getElementById("explanationImage");
 const quizForm = document.getElementById("quizForm");
 
+// Ẩn phần chọn đáp án và nút kiểm tra ban đầu
+quizForm.style.display = "none";
+checkAnswerButton.style.display = "none";
+
 let currentQuestion = null; // Lưu câu hỏi hiện tại
 
 subjectSelect.addEventListener("change", () => {
@@ -22,6 +26,10 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai3">Bài 3: Đường tiệm cận của đồ thị hàm số</option>
   <option value="bai4">Bài 4: Khảo sát sự biến thiên và vẽ đồ thị của hàm số</option>
   <option value="bai5">Bài 5: Ứng dụng đạo hàm để giải quyết một số vấn đề liên quan đến thực tiễn</option>
+  <option value="bai6">Bài 6: Vectơ trong không gian </option>
+  <option value="bai7">Bài 7: Hệ trục toạ độ trong không gian</option>
+  <option value="bai8">Bài 8: Biểu thức toạ độ của các phép toán vectơ</option>
+  <option value="bai17">Bài 17: Phương trình mặt cầu</option>
 `;
   } else if (selectedSubject === "tin") {
     lessonSelectContainer.style.display = "block";
@@ -52,6 +60,10 @@ subjectSelect.addEventListener("change", () => {
 randomButton.addEventListener("click", () => {
   const selectedSubject = subjectSelect.value;
   const selectedLesson = lessonSelect.value;
+
+  // Hiển thị lựa chọn đáp án và nút kiểm tra
+  quizForm.style.display = "block";
+  checkAnswerButton.style.display = "block";
 
   if (!questions[selectedSubject] || !questions[selectedSubject][selectedLesson]) {
     result.textContent = "⚠ Không có câu hỏi nào!";
