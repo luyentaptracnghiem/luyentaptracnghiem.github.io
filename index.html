@@ -6,8 +6,9 @@
   <title>Ai là Đại Vương của khối 12</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Ai là Đại Vương của khối 12</h1>
+
+  <h1><img src="images/logo.png" alt="Logo" class="logo">
+    Ai là Đại Vương của Khối 12</h1>
 
   <!-- Chọn môn học -->
   <label for="subjectSelect">Tôi muốn chinh phục:</label>
@@ -28,8 +29,7 @@
   <button id="randomButton">Câu hỏi</button>
 
   <!-- Hiển thị ảnh câu hỏi -->
-  <p><img id="randomImage" alt="Ảnh câu hỏi" class="hidden"></p>
-
+  <p><img id="randomImage" alt="Ảnh câu hỏi" class="hidden" style="max-width: 100%;"></p>
 
   <!-- Phần chọn đáp án -->
   <div class="answers">
@@ -50,14 +50,19 @@
   </div>
 
   <!-- Nút kiểm tra kết quả -->
-  <button id="checkAnswerButton">Kiểm tra kết quả đã lựa chọn</button>
-
+  <p style="text-align: center;"><button id="checkAnswerButton" style="display: block; margin: 0 auto;">
+  Kiểm tra kết quả đã lựa chọn
+  </button></p>
+  
   <!-- Hiển thị kết quả -->
   <p id="result"></p>
-  <img id="explanationImage" alt="Ảnh lời giải" class="hidden">
+  <img id="explanationImage" alt="Ảnh lời giải" class="hidden" style="max-width: 100%;">
 
   <!-- Import JavaScript -->
   <script src="questions.js"></script>
   <script src="script.js"></script>
+
+  <audio id="correctSound" src="correct.mp3"></audio>
+  <audio id="wrongSound" src="wrong.mp3"></audio>
 </body>
 </html>

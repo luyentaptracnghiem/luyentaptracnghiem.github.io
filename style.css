@@ -33,6 +33,14 @@ body {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
+
+  .logo {
+    height: 80px; /* Điều chỉnh kích thước */
+    vertical-align: middle; /* Căn giữa với chữ */
+    margin-right: 10px; /* Tạo khoảng cách với tiêu đề */
+    border-radius: 50%;  /* Bo tròn hoàn toàn */
+    object-fit: cover;  /* Cắt ảnh vừa khít */
+  }  
   
   /* Button chung */
   button {
@@ -64,6 +72,19 @@ body {
     border-radius: 10px;
     min-width: 250px;
   }
+
+  #result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Nếu có nhiều phần tử như ảnh */
+    min-width: 250px;
+    max-width: 40%;  /* Giới hạn chiều rộng */
+    margin: 20px auto; /* Căn giữa theo chiều ngang */
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
   
   /* Kết quả đúng */
   #result.correct {
@@ -121,4 +142,3 @@ body {
   #lessonSelectContainer {
     margin-top: 10px;
   }
-  

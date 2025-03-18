@@ -66,7 +66,7 @@ randomButton.addEventListener("click", () => {
   checkAnswerButton.style.display = "block";
 
   if (!questions[selectedSubject] || !questions[selectedSubject][selectedLesson]) {
-    result.textContent = "⚠ Không có câu hỏi nào!";
+    result.textContent = "⚠ Không có câu hỏi nào cả!";
     result.className = "error";
     return;
   }
@@ -80,32 +80,37 @@ randomButton.addEventListener("click", () => {
   randomImage.classList.remove("hidden");
   explanationImage.classList.add("hidden");
   result.textContent = "";
+  result.classList.remove("correct", "wrong"); // Xóa nền xanh/đỏ khi chuyển câu hỏi mới
   quizForm.reset();
 });
 
+// Tạo audio cho đúng và sai
+const correctSound = new Audio("correct.mp3");
+const wrongSound = new Audio("wrong.mp3");
+
 checkAnswerButton.addEventListener("click", () => {
   if (!currentQuestion) {
-    result.textContent = "Hãy bấm 'Câu hỏi' trước!";
+    result.textContent = "Hãy bấm vào 'Câu hỏi' trước bạn nhé!";
     result.className = "error";
     return;
   }
 
   const selectedAnswer = quizForm.answer.value;
   if (!selectedAnswer) {
-    result.textContent = "Vui lòng chọn đáp án trước!";
+    result.textContent = "Vui lòng bạn chọn đáp án trước!";
     result.className = "error";
     return;
   }
-
-  result.classList.remove("correct", "wrong");
-
+    result.classList.remove("correct", "wrong"); 
   if (selectedAnswer === currentQuestion.answer) {
-    result.textContent = "🎉 Chính xác!";
+    result.textContent = "🎉 Oh yeah! Chúc mừng bạn đã trả lời đúng!";
     result.classList.add("correct");
+    correctSound.play(); // Phát âm thanh đúng
   } else {
-    result.textContent = `❌ Sai rồi! Đáp án đúng là ${currentQuestion.answer}.`;
+    result.textContent = `❌ Oh no! Bạn đã chọn sai rồi! Đáp án đúng là ${currentQuestion.answer}.`;
     result.classList.add("wrong");
     explanationImage.src = currentQuestion.explanationImage;
     explanationImage.classList.remove("hidden");
+    wrongSound.play(); // Phát âm thanh sai
   }
 });
