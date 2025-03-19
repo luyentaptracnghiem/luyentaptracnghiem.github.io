@@ -102,7 +102,7 @@ checkAnswerButton.addEventListener("click", () => {
     result.className = "error";
     return;
   }
-    result.classList.remove("correct", "wrong"); 
+    result.classList.remove("correct", "wrong","error"); 
   if (selectedAnswer === currentQuestion.answer) {
     result.textContent = "🎉 Ối dồi ôi! Thiên tài là đây chứ đâu🤯";
     result.classList.add("correct");
