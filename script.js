@@ -81,7 +81,7 @@ randomButton.addEventListener("click", () => {
   randomImage.classList.remove("hidden");
   explanationImage.classList.add("hidden");
   result.textContent = "";
-  result.classList.remove("correct", "wrong"); // Xóa nền xanh/đỏ khi chuyển câu hỏi mới
+  result.classList.remove("correct", "wrong","error"); // Xóa nền xanh/đỏ khi chuyển câu hỏi mới
   quizForm.reset();
 });
 
