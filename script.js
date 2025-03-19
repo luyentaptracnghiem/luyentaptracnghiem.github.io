@@ -30,6 +30,7 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai7">Bài 7: Hệ trục toạ độ trong không gian</option>
   <option value="bai8">Bài 8: Biểu thức toạ độ của các phép toán vectơ</option>
   <option value="bai17">Bài 17: Phương trình mặt cầu</option>
+  <option value="bai18">Bài 18: Xác suất có điều kiện</option>
 `;
   } else if (selectedSubject === "tin") {
     lessonSelectContainer.style.display = "block";
