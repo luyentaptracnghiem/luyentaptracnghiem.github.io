@@ -103,11 +103,11 @@ checkAnswerButton.addEventListener("click", () => {
   }
     result.classList.remove("correct", "wrong"); 
   if (selectedAnswer === currentQuestion.answer) {
-    result.textContent = "🎉 Oh yeah! Chúc mừng bạn đã trả lời đúng!";
+    result.textContent = "🎉 Ối dồi ôi! Thiên tài là đây chứ đâu🤯";
     result.classList.add("correct");
     correctSound.play(); // Phát âm thanh đúng
   } else {
-    result.textContent = `❌ Oh no! Bạn đã chọn sai rồi! Đáp án đúng là ${currentQuestion.answer}.`;
+    result.textContent = `❌ Ủa alo? Đọc kỹ đề chưa vậy🫠 Đáp án đúng là ${currentQuestion.answer}`;
     result.classList.add("wrong");
     explanationImage.src = currentQuestion.explanationImage;
     explanationImage.classList.remove("hidden");
