@@ -556,10 +556,7 @@ const questions = {
       { "image": "images/questions/toan/bai18/image30.png", "answer": "C", "explanationImage": "images/solutions/toan/bai18/explanation30.png" },
       { "image": "images/questions/toan/bai18/image31.png", "answer": "B", "explanationImage": "images/solutions/toan/bai18/explanation31.png" },
       { "image": "images/questions/toan/bai18/image32.png", "answer": "A", "explanationImage": "images/solutions/toan/bai18/explanation32.png" },
-      { "image": "images/questions/toan/bai18/image33.png", "answer": "B", "explanationImage": "images/solutions/toan/bai18/explanation33.png" },
-      { "image": "images/questions/toan/bai18/image34.png", "answer": "C", "explanationImage": "images/solutions/toan/bai18/explanation34.png" },
-      { "image": "images/questions/toan/bai18/image35.png", "answer": "C", "explanationImage": "images/solutions/toan/bai18/explanation35.png" },
-      { "image": "images/questions/toan/bai18/image36.png", "answer": "C", "explanationImage": "images/solutions/toan/bai18/explanation36.png" }
+      { "image": "images/questions/toan/bai18/image33.png", "answer": "B", "explanationImage": "images/solutions/toan/bai18/explanation33.png" }
     ],
   },
 

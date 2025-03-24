@@ -13,6 +13,7 @@ quizForm.style.display = "none";
 checkAnswerButton.style.display = "none";
 
 let currentQuestion = null; // Lưu câu hỏi hiện tại
+let usedQuestions = new Set(); // Lưu các câu hỏi đã xuất hiện
 
 subjectSelect.addEventListener("change", () => {
   const selectedSubject = subjectSelect.value;
@@ -75,15 +76,28 @@ randomButton.addEventListener("click", () => {
   checkAnswerButton.style.display = "block";
 
   if (!questions[selectedSubject] || !questions[selectedSubject][selectedLesson]) {
-    result.textContent = "⚠ Không có câu hỏi nào cả!";
+    if (result.textContent !== "Hãy bấm vào 'Câu hỏi' trước bạn nhé!") {
+        result.textContent = "⚠ Không có câu hỏi nào cả!";
+    }
     result.className = "error";
     return;
-  }
+}
 
   let subjectQuestions = questions[selectedSubject][selectedLesson];
+  let availableQuestions = subjectQuestions.filter(q => !usedQuestions.has(q));
 
-  const randomIndex = Math.floor(Math.random() * subjectQuestions.length);
-  currentQuestion = subjectQuestions[randomIndex];
+if (availableQuestions.length === 0) {
+  result.textContent = "⚠ Đã hết câu hỏi rồi ạ!";
+  result.className = "error";
+  quizForm.style.display = "none"; // Ẩn form khi hết câu hỏi
+  checkAnswerButton.style.display = "none"; // Ẩn nút kiểm tra đáp án
+  return;
+}
+
+const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+currentQuestion = availableQuestions[randomIndex];
+usedQuestions.add(currentQuestion);
+
 
   randomImage.src = currentQuestion.image;
   randomImage.classList.remove("hidden");
@@ -98,11 +112,15 @@ const correctSound = new Audio("correct.mp3");
 const wrongSound = new Audio("wrong.mp3");
 
 checkAnswerButton.addEventListener("click", () => {
+  
   if (!currentQuestion) {
+    if (result.textContent === "⚠ Đã hết câu hỏi rồi ạ!" || quizForm.style.display === "none") {
+        return; // Giữ nguyên nếu đã hết câu hỏi hoặc form bị ẩn
+    }
     result.textContent = "Hãy bấm vào 'Câu hỏi' trước bạn nhé!";
     result.className = "error";
     return;
-  }
+}
 
   const selectedAnswer = quizForm.answer.value;
   if (!selectedAnswer) {
@@ -111,7 +129,6 @@ checkAnswerButton.addEventListener("click", () => {
     return;
   }
   result.classList.remove("correct", "wrong", "error");
-
   if (selectedAnswer === currentQuestion.answer) {
     result.textContent = "🎉 Ối dồi ôi! Thiên tài là đây chứ đâu🤯";
     result.classList.add("correct");
