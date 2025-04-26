@@ -68,6 +68,10 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai10">Bài 10: Chuyển Dịch Cơ Cấu Kinh Tế</option>
   <option value="bai11">Bài 11: Vấn đề phát triển ngành nông nghiệp</option>
   <option value="bai12">Bài 12: Vấn đề phát triển ngành lâm nghiệp và ngành thuỷ sản</option>
+  <option value="bai15">Bài 15: Chuyển dịch cơ cấu ngành công nghiệp</option>
+  <option value="bai16">Bài 16:Một số ngành công nghiệp </option> 
+  <option value="bai17">Bài 17:Tổ chức lãnh thổ công nghiệp </option> 
+  <option value="bai19">Bài 19:Vai trò, các nhân tố ảnh hưởng đến sự phát triển và phân bố các ngành dịch vụ </option>  
 `;
   } else {
     lessonSelectContainer.style.display = "none";
