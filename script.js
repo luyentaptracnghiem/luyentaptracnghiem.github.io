@@ -53,6 +53,10 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai4">Bài 4: Giao thức mạng</option>
   <option value="bai5">Bài 5: Thực hành chia sẻ tài nguyên trên mạng</option>
   <option value="bai6">Bài 6: Giao tiếp và ứng xử trong không gian mạng</option>
+  <option value="bai7">Bài 7:HTML và cấu trúc trang web</option>
+  <option value="bai8">Bài 8:Định dạng văn bản</option>
+  <option value="bai9">Bài 9:Tạo danh sách, bảng</option>
+  <option value="bai10">Bài 10:Tạo liên kết</option>
 `;
   } else if (selectedSubject === "dia") {
     questionTypeContainer.style.display = "block";
