@@ -1,4 +1,5 @@
 const subjectSelect = document.getElementById("subjectSelect");
+const questionTypeContainer = document.getElementById("questionTypeContainer");
 const lessonSelectContainer = document.getElementById("lessonSelectContainer");
 const lessonSelect = document.getElementById("lessonSelect");
 const randomButton = document.getElementById("randomButton");
@@ -20,6 +21,7 @@ subjectSelect.addEventListener("change", () => {
   lessonSelect.innerHTML = "";
 
   if (selectedSubject === "toan") {
+    questionTypeContainer.style.display = "block";
     lessonSelectContainer.style.display = "block";
     lessonSelect.innerHTML = `
   <option value="bai1">Bài 1: Tính đơn điệu và cực trị của hàm số</option>
@@ -42,6 +44,7 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai18">Bài 18: Xác suất có điều kiện</option>
 `;
   } else if (selectedSubject === "tin") {
+    questionTypeContainer.style.display = "block";
     lessonSelectContainer.style.display = "block";
     lessonSelect.innerHTML = `
   <option value="bai1">Bài 1: Làm quen với Trí tuệ nhân tạo</option>
@@ -52,6 +55,7 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai6">Bài 6: Giao tiếp và ứng xử trong không gian mạng</option>
 `;
   } else if (selectedSubject === "dia") {
+    questionTypeContainer.style.display = "block";
     lessonSelectContainer.style.display = "block";
     lessonSelect.innerHTML = `
   <option value="bai1">Bài 1: Vị trí địa lí và phạm vi lãnh thổ</option>
@@ -61,6 +65,7 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai6">Bài 6: Dân số Việt Nam</option>
   <option value="bai7">Bài 7: Lao động và việc làm</option>
   <option value="bai8">Bài 8: Đô thị hoá</option>
+   <option value="bai9">Bài 9: hdgaf</option>
 `;
   } else {
     lessonSelectContainer.style.display = "none";
@@ -77,27 +82,100 @@ randomButton.addEventListener("click", () => {
 
   if (!questions[selectedSubject] || !questions[selectedSubject][selectedLesson]) {
     if (result.textContent !== "Hãy bấm vào 'Câu hỏi' trước bạn nhé!") {
-        result.textContent = "⚠ Không có câu hỏi nào cả!";
+      result.textContent = "⚠ Không có câu hỏi nào cả!";
     }
     result.className = "error";
     return;
-}
+  }
 
-  let subjectQuestions = questions[selectedSubject][selectedLesson];
+  const selectedType = parseInt(document.getElementById("questionTypeSelect").value);
+  let subjectQuestions = questions[selectedSubject][selectedLesson].filter(q => q.type === selectedType);
   let availableQuestions = subjectQuestions.filter(q => !usedQuestions.has(q));
 
-if (availableQuestions.length === 0) {
-  result.textContent = "⚠ Đã hết câu hỏi rồi ạ!";
-  result.className = "error";
-  quizForm.style.display = "none"; // Ẩn form khi hết câu hỏi
-  checkAnswerButton.style.display = "none"; // Ẩn nút kiểm tra đáp án
-  return;
-}
+  if (availableQuestions.length === 0) {
+    result.textContent = "⚠ Đã hết câu hỏi rồi ạ!";
+    result.className = "error";
+    quizForm.style.display = "none"; // Ẩn form khi hết câu hỏi
+    checkAnswerButton.style.display = "none"; // Ẩn nút kiểm tra đáp án
+    return;
+  }
 
-const randomIndex = Math.floor(Math.random() * availableQuestions.length);
-currentQuestion = availableQuestions[randomIndex];
-usedQuestions.add(currentQuestion);
+  const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[randomIndex];
+  usedQuestions.add(currentQuestion);
 
+  // Hiển thị đáp án tương ứng
+  if (currentQuestion.type === 2 && Array.isArray(currentQuestion.answer)) {
+    let html = `
+    <div class="row">
+      <div class="question">
+        <strong>a.</strong>
+        <div class="option" data-name="answer0" data-value="Đúng">Đúng</div>
+        <div class="option" data-name="answer0" data-value="Sai">Sai</div>
+      </div>
+      <div class="question">
+        <strong>b.</strong>
+        <div class="option" data-name="answer1" data-value="Đúng">Đúng</div>
+        <div class="option" data-name="answer1" data-value="Sai">Sai</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="question">
+        <strong>c.</strong>
+        <div class="option" data-name="answer2" data-value="Đúng">Đúng</div>
+        <div class="option" data-name="answer2" data-value="Sai">Sai</div>
+      </div>
+      <div class="question">
+        <strong>d.</strong>
+        <div class="option" data-name="answer3" data-value="Đúng">Đúng</div>
+        <div class="option" data-name="answer3" data-value="Sai">Sai</div>
+      </div>
+    </div>
+  `;
+    quizForm.innerHTML = html;
+
+    quizForm.querySelectorAll('.option').forEach(option => {
+      option.addEventListener('click', () => {
+        const name = option.getAttribute('data-name');
+
+        // Xóa chọn cũ cùng câu hỏi
+        quizForm.querySelectorAll(`.option[data-name="${name}"]`).forEach(opt => {
+          opt.classList.remove('selected-dung', 'selected-sai', 'clicked');
+        });
+
+        // Thêm chọn mới + hiệu ứng nhún
+        const isDung = option.getAttribute('data-value') === "Đúng";
+        option.classList.add(isDung ? 'selected-dung' : 'selected-sai');
+        option.classList.add('clicked');
+
+        // Loại bỏ class .clicked sau khi animation kết thúc để có thể tái sử dụng
+        setTimeout(() => {
+          option.classList.remove('clicked');
+        }, 200);
+      });
+    });
+
+
+  } else {
+    quizForm.innerHTML = `
+    <div class="row">
+      <label>
+        <input type="radio" name="answer" value="A"> Đáp án A
+      </label>
+      <label>
+        <input type="radio" name="answer" value="B"> Đáp án B
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        <input type="radio" name="answer" value="C"> Đáp án C
+      </label>
+      <label>
+        <input type="radio" name="answer" value="D"> Đáp án D
+      </label>
+    </div>
+  `;
+  }
 
   randomImage.src = currentQuestion.image;
   randomImage.classList.remove("hidden");
@@ -112,32 +190,66 @@ const correctSound = new Audio("correct.mp3");
 const wrongSound = new Audio("wrong.mp3");
 
 checkAnswerButton.addEventListener("click", () => {
-  
   if (!currentQuestion) {
     if (result.textContent === "⚠ Đã hết câu hỏi rồi ạ!" || quizForm.style.display === "none") {
-        return; // Giữ nguyên nếu đã hết câu hỏi hoặc form bị ẩn
+      return;
     }
     result.textContent = "Hãy bấm vào 'Câu hỏi' trước bạn nhé!";
     result.className = "error";
     return;
-}
+  }
 
-  const selectedAnswer = quizForm.answer.value;
+  // Nếu là dạng Đúng/Sai
+  if (currentQuestion.type === 2 && Array.isArray(currentQuestion.answer)) {
+    let correct = true;
+    for (let i = 0; i < 4; i++) {
+      const selectedOption = quizForm.querySelector(`.option.selected-dung[data-name="answer${i}"], .option.selected-sai[data-name="answer${i}"]`);
+
+      if (!selectedOption) {
+        correct = false;
+        break; // Nếu chưa chọn đầy đủ, coi như sai
+      }
+
+      const selectedValue = selectedOption.getAttribute('data-value');
+      if (selectedValue !== currentQuestion.answer[i]) {
+        correct = false;
+        break; // Sai 1 câu là sai luôn
+      }
+    }
+
+    if (correct) {
+      result.textContent = "🎉 Gì thế này? Chính xác tất cả câu á! Ảo vậy 😱";
+      result.className = "correct";
+      correctSound.play();
+    } else {
+      result.textContent = "❌ Tiếc quá! Bạn đã làm sai câu nào đó rồi 😭";
+      result.className = "wrong";
+      explanationImage.src = currentQuestion.explanationImage;
+      explanationImage.classList.remove("hidden");
+      wrongSound.play();
+    }
+
+    return; // Dừng tại đây nếu đang xử lý đúng/sai
+  }
+
+  // Nếu là dạng ABCD như bình thường
+  const selectedAnswer = quizForm.answer?.value;
   if (!selectedAnswer) {
     result.textContent = "Vui lòng bạn chọn đáp án trước!";
     result.className = "error";
     return;
   }
+
   result.classList.remove("correct", "wrong", "error");
   if (selectedAnswer === currentQuestion.answer) {
     result.textContent = "🎉 Ối dồi ôi! Thiên tài là đây chứ đâu🤯";
     result.classList.add("correct");
-    correctSound.play(); // Phát âm thanh đúng
+    correctSound.play();
   } else {
     result.textContent = `❌ Ủa alo? Đọc kỹ đề chưa vậy🫠 Đáp án đúng là ${currentQuestion.answer}`;
     result.classList.add("wrong");
     explanationImage.src = currentQuestion.explanationImage;
     explanationImage.classList.remove("hidden");
-    wrongSound.play(); // Phát âm thanh sai
+    wrongSound.play();
   }
 });

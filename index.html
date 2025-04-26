@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +8,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-  <h1><img src="images/logo.png" alt="Logo" class="logo">
-    Ai là Đại Vương của Khối 12</h1>
+<h1><img src="images/logo.png" alt="Logo" class="logo">
+  Ai là Đại Vương của Khối 12</h1>
 
-  <!-- Chọn môn học -->
-  <label for="subjectSelect">Tôi muốn chinh phục:</label>
-  <select id="subjectSelect">
-    <option value="" disabled selected>Môn học</option>
-    <option value="toan">Toán</option>
-    <option value="tin">Tin học</option>
-    <option value="dia">Địa lý</option>
+<!-- Chọn môn học -->
+<label for="subjectSelect">Tôi muốn chinh phục:</label>
+<select id="subjectSelect">
+  <option value="" disabled selected>Môn học</option>
+  <option value="toan">Toán</option>
+  <option value="tin">Tin học</option>
+  <option value="dia">Địa lý</option>
+</select>
+
+<!-- Chọn loại câu hỏi -->
+<div id="questionTypeContainer" style="display: none; margin-top: 10px;">
+  <label for="questionTypeSelect">Chọn dạng câu hỏi:</label>
+  <select id="questionTypeSelect">
+    <option value="1">Trắc nghiệm ABCD</option>
+    <option value="2">Trắc nghiệm Đúng Sai</option>
   </select>
+</div>
 
-  <!-- Chọn bài học -->
-  <div id="lessonSelectContainer" style="display: none; margin-top: 10px;">
-    <label for="lessonSelect">Chọn bài học:</label>
-    <select id="lessonSelect"></select>
-  </div>
+<!-- Chọn bài học -->
+<div id="lessonSelectContainer" style="display: none; margin-top: 10px;">
+  <label for="lessonSelect">Chọn bài học:</label>
+  <select id="lessonSelect"></select>
+</div>
 
-  <!-- Nút để hiển thị câu hỏi -->
-  <button id="randomButton">Câu hỏi</button>
+<!-- Nút để hiển thị câu hỏi -->
+<button id="randomButton">Câu hỏi</button>
 
-  <!-- Hiển thị ảnh câu hỏi -->
-  <p><img id="randomImage" alt="Ảnh câu hỏi" class="hidden" style="max-width: 100%;"></p>
+<!-- Hiển thị ảnh câu hỏi -->
+<p><img id="randomImage" alt="Ảnh câu hỏi" class="hidden" style="max-width: 100%;"></p>
 
-  <!-- Phần chọn đáp án -->
-  <div class="answers">
-    <form id="quizForm">
-      <label>
-        <input type="radio" name="answer" value="A"> Đáp án A
-      </label><br>
-      <label>
-        <input type="radio" name="answer" value="B"> Đáp án B
-      </label><br>
-      <label>
-        <input type="radio" name="answer" value="C"> Đáp án C
-      </label><br>
-      <label>
-        <input type="radio" name="answer" value="D"> Đáp án D
-      </label>
-    </form>
-  </div>
+<!-- Phần chọn đáp án -->
+<div class="answers">
+  <form id="quizForm"></form>
+</div>
 
-  <!-- Nút kiểm tra kết quả -->
-  <p style="text-align: center;"><button id="checkAnswerButton" style="display: block; margin: 0 auto;">
-  Kiểm tra đáp án
+<!-- Nút kiểm tra kết quả -->
+<p style="text-align: center;"><button id="checkAnswerButton" style="display: block; margin: 0 auto;">
+    Kiểm tra đáp án
   </button></p>
-  
-  <!-- Hiển thị kết quả -->
-  <p id="result"></p>
-  <img id="explanationImage" alt="Ảnh lời giải" class="hidden" style="max-width: 100%;">
 
-  <!-- Import JavaScript -->
-  <script src="questions.js"></script>
-  <script src="script.js"></script>
+<!-- Hiển thị kết quả -->
+<p id="result"></p>
+<img id="explanationImage" alt="Ảnh lời giải" class="hidden" style="max-width: 100%;">
 
-  <audio id="correctSound" src="correct.mp3"></audio>
-  <audio id="wrongSound" src="wrong.mp3"></audio>
+<!-- Import JavaScript -->
+<script src="questions.js"></script>
+<script src="script.js"></script>
+
+<audio id="correctSound" src="correct.mp3"></audio>
+<audio id="wrongSound" src="wrong.mp3"></audio>
 </body>
+
 </html>
