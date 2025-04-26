@@ -1521,5 +1521,158 @@ const questions = {
         "explanationImage": "images/solutions/dia/bai8/explanation20.png"
       }
     ],
+    bai10: [
+  {
+    "image": "images/questions/dia/bai10/image1.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai10/explanation1.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image2.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai10/explanation2.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image3.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation3.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image4.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation4.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image5.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation5.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image6.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai10/explanation6.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image7.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation7.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image8.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation8.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image9.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai10/explanation9.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image10.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai10/explanation10.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image11.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai10/explanation11.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image12.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai10/explanation12.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image13.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai10/explanation13.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image14.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation14.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image15.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation15.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image16.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation16.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image17.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai10/explanation17.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image18.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation18.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image19.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai10/explanation19.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image20.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai10/explanation20.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image21.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai10/explanation21.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image22.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai10/explanation22.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image23.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai10/explanation23.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image24.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai10/explanation24.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai10/image25.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai10/explanation25.png",
+    "type": 1
+  }
+],
+
   },
 };
