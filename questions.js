@@ -2004,6 +2004,182 @@ const questions = {
     "type": 1
   }
 ],
+bai11: [
+  {
+    "image": "images/questions/dia/bai11/image1.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation1.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image2.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation2.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image3.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation3.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image4.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation4.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image5.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation5.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image6.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai11/explanation6.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image7.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation7.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image8.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation8.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image9.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation9.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image10.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation10.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image11.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation11.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image12.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation12.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image13.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation13.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image14.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation14.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image15.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation15.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image16.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation16.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image17.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation17.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image18.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation18.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image19.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation19.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image20.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai11/explanation20.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image21.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation21.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image22.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation22.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image23.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation23.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image24.png",
+    "answer": "B",
+    "explanationImage": "images/solutions/dia/bai11/explanation24.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image25.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai11/explanation25.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image26.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai11/explanation26.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image27.png",
+    "answer": "C",
+    "explanationImage": "images/solutions/dia/bai11/explanation27.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image28.png",
+    "answer": "D",
+    "explanationImage": "images/solutions/dia/bai11/explanation28.png",
+    "type": 1
+  },
+  {
+    "image": "images/questions/dia/bai11/image29.png",
+    "answer": "A",
+    "explanationImage": "images/solutions/dia/bai11/explanation29.png",
+    "type": 1
+  }
+],
 
   },
 };
