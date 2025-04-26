@@ -61,6 +61,7 @@ subjectSelect.addEventListener("change", () => {
   <option value="bai6">Bài 6: Dân số Việt Nam</option>
   <option value="bai7">Bài 7: Lao động và việc làm</option>
   <option value="bai8">Bài 8: Đô thị hoá</option>
+   <option value="bai10">Bài 10: Chuyển Dịch Cơ Cấu Kinh Tế</option>
 `;
   } else {
     lessonSelectContainer.style.display = "none";
