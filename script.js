@@ -9,9 +9,33 @@ const result = document.getElementById("result");
 const explanationImage = document.getElementById("explanationImage");
 const quizForm = document.getElementById("quizForm");
 
+const timerDisplay = document.getElementById("timer");
+let timerInterval;
+let elapsedSeconds = 0;
+
+function startTimer() {
+  clearInterval(timerInterval);
+  elapsedSeconds = 0;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    elapsedSeconds++;
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
+function updateTimerDisplay() {
+  if (timerDisplay) {
+    timerDisplay.textContent = `⏱ ${elapsedSeconds} giây`;
+  }
+}
+
 // Ẩn phần chọn đáp án và nút kiểm tra ban đầu
 quizForm.style.display = "none";
-checkAnswerButton.style.display = "none";
+document.getElementById("actionContainer").style.display = "none";
 
 let currentQuestion = null; // Lưu câu hỏi hiện tại
 let usedQuestions = new Set(); // Lưu các câu hỏi đã xuất hiện
@@ -88,7 +112,9 @@ randomButton.addEventListener("click", () => {
 
   // Hiển thị lựa chọn đáp án và nút kiểm tra
   quizForm.style.display = "block";
-  checkAnswerButton.style.display = "block";
+  document.getElementById("actionContainer").style.display = "flex";
+  
+  startTimer(); // Bắt đầu tính giờ mỗi lần bấm "Câu hỏi"
 
   if (!questions[selectedSubject] || !questions[selectedSubject][selectedLesson]) {
     if (result.textContent !== "Hãy bấm vào 'Câu hỏi' trước bạn nhé!") {
@@ -199,6 +225,8 @@ const correctSound = new Audio("correct.mp3");
 const wrongSound = new Audio("wrong.mp3");
 
 checkAnswerButton.addEventListener("click", () => {
+  stopTimer(); // Dừng đồng hồ khi bấm "Kiểm tra đáp án"
+
   if (!currentQuestion) {
     if (result.textContent === "⚠ Đã hết câu hỏi rồi ạ!" || quizForm.style.display === "none") {
       return;

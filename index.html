@@ -53,10 +53,13 @@
   <form id="quizForm"></form>
 </div>
 
-<!-- Nút kiểm tra kết quả -->
-<p style="text-align: center;"><button id="checkAnswerButton" style="display: block; margin: 0 auto;">
-    Kiểm tra đáp án
-  </button></p>
+<div id="actionContainer" style="display: none; justify-content: center; align-items: center; gap: 16px; margin-top: 12px;">
+  <button id="checkAnswerButton">Kiểm tra đáp án</button>
+  <div id="timer" style="font-weight: bold; padding: 6px 12px; background: #111; color:#FFD700; border-radius: 8px; font-size: 16px;"
+  >
+    ⏱ 0 giây
+  </div>
+</div>  
 
 <!-- Hiển thị kết quả -->
 <p id="result"></p>
